@@ -2,8 +2,7 @@ import fetch from "node-fetch";
 
 exports.handler = async (event, context) => {
   const CODE = event.queryStringParameters.code;
-  const REDIRECT_URI =
-    "https://taupe-lamington-0efb98.netlify.app/.netlify/functions/callback";
+  const REDIRECT_URI = "http://localhost:8888/.netlify/functions/callback";
   const GRANT_TYPE = "authorization_code";
   const CLIENT_ID = "b27850c09d1a4ebf9e6fe3ebde9e4278";
   const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
@@ -40,7 +39,7 @@ exports.handler = async (event, context) => {
   return {
     statusCode: 302,
     headers: {
-      Location: `https://taupe-lamington-0efb98.netlify.app/featured?${redirectParams.toString()}`,
+      Location: `http://localhost:8888/featured?${redirectParams.toString()}`,
     },
     body: JSON.stringify({}),
   };

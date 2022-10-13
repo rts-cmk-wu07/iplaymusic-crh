@@ -47,15 +47,12 @@ export const TokenProvider = ({ children }: { children: React.ReactNode }) => {
     }
 
     const interval = setInterval(() => {
-      fetch(
-        "https://taupe-lamington-0efb98.netlify.app/.netlify/functions/refresh",
-        {
-          method: "POST",
-          body: JSON.stringify({
-            refreshToken: authTokens.refreshToken,
-          }),
-        }
-      )
+      fetch("http://localhost:8888/.netlify/functions/refresh", {
+        method: "POST",
+        body: JSON.stringify({
+          refreshToken: authTokens.refreshToken,
+        }),
+      })
         .then((res) => res.json())
         .then((data) => {
           setAuthTokens({
