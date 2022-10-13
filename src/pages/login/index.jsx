@@ -5,7 +5,7 @@ params.append("client_id", "b27850c09d1a4ebf9e6fe3ebde9e4278");
 params.append("response_type", "code");
 params.append(
   "redirect_uri",
-  "http://localhost:8888/.netlify/functions/callback"
+  "https://taupe-lamington-0efb98.netlify.app/.netlify/functions/callback"
 );
 params.append(
   "scope",
